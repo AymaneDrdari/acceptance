@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aymane.calculator.CalculatorApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-21T08:54:35" hostname="ubuntu-XPS-13-9365" time="1.526">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.aymane.calculator.CalculatorApplicationTests" time="1.526"/>
+  <system-out><![CDATA[03:54:28.795 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.aymane.calculator.CalculatorApplicationTests]: CalculatorApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+03:54:29.529 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.aymane.calculator.CalculatorApplication for test class com.aymane.calculator.CalculatorApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2023-12-21T03:54:31.862-05:00  INFO 19433 --- [    Test worker] c.a.c.CalculatorApplicationTests         : Starting CalculatorApplicationTests using Java 17.0.9 with PID 19433 (started by ubuntu in /home/ubuntu/acceptance)
+2023-12-21T03:54:31.865-05:00  INFO 19433 --- [    Test worker] c.a.c.CalculatorApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2023-12-21T03:54:35.322-05:00  INFO 19433 --- [    Test worker] c.a.c.CalculatorApplicationTests         : Started CalculatorApplicationTests in 4.802 seconds (process running for 11.656)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

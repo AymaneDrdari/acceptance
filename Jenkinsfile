@@ -2,25 +2,48 @@ pipeline {
     agent any
     
     stages {
-        stage("Compilation") {
+        stage("Package") {
             steps {
-                script {
-                    sh "./gradlew compileJava"
-                }
+                sh "./gradlew build"
             }
         }
         
-        stage("Test unitaire") {
+        stage("Docker build") {
             steps {
-                script {
-                    sh "./gradlew test"
-                }
+                sh "docker build -t calculator ."
             }
         }
         
-        // Vous pouvez ajouter d'autres étapes de déploiement ou de vérification ici
+        stage("Docker push") {
+            steps {
+                sh "docker push localhost:5000/calculator"
+            }
+        }
+        
+        stage("Déploiement sur staging") {
+            steps {
+                sh "docker stop calculator"
+                sh "docker rm calculator"
+                sh "docker run -d -p 8765:8080 --name calculator localhost:5000/calculator"
+            }
+        }
+        
+        stage("Test d'acceptation") {
+            steps {
+                sh "docker stop calculator"
+                sh "docker rm calculator"
+                sh "docker run -d -p 8765:8080 --name calculator localhost:5000/calculator"
+                sleep 60
+                //sh "chmod +x acceptance_test.sh && ./acceptance_test.sh"
+            }
+        }
     }
-    
-    // Vous pouvez également ajouter des directives post-build, notifications, etc.
+
+    post {
+        always {
+            sh "docker stop calculator"
+        }
+    }
 }
+
 
